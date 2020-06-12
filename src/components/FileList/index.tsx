@@ -1,4 +1,5 @@
 import React from 'react';
+import { uuid } from 'uuidv4';
 
 import { Container, FileInfo } from './styles';
 
@@ -14,8 +15,8 @@ interface FileListProps {
 const FileList: React.FC<FileListProps> = ({ files }: FileListProps) => {
   return (
     <Container>
-      {files.map((uploadedFile) => (
-        <li key={uploadedFile.name}>
+      {files.map(uploadedFile => (
+        <li key={uuid()}>
           <FileInfo>
             <div>
               <strong>{uploadedFile.name}</strong>
